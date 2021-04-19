@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books-'N-Stuff</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="classes.js"></script>
+</head>
+<body>
+
+    <div id="background"></div>
+
+    <header>Books-'N-Stuff</header>
+    <section id="menu">
+        <button id="seeCatalog">See Catalog</button>
+        <button id="searchMedia">Search Item</button>
+        <button id="inputMedia">Input Item</button>
+        <button id="return">Return</button>
+    </section>
+    <section id="media">
+        <button id="searchbtn" type="button">Search</button><input id="search" type="text" placeholder="Search title">
+        <div id="generaldata">
+            <h1></h1>
+            <button id = "checkedOutbtn" type="button">Checked Out</button><input id="checkOutStatus" type="text" disabled><br>
+            <button id = "addRating" type="button">Add Rating</button><input type="number" id="rate" placeholder="Add rating (0-5)"><br>
+            <label for="rating">Average Rating</label><input id="rating" type="number" disabled>
+        </div>
+        <div id="book">
+            <span>Author:</span><span id="author"></span><br>
+            <span>Pages:</span><span id="pages"></span>
+        </div>
+        <div id="movie">
+            <span>Director:</span><span id="director"></span><br>
+            <span>Run Time:</span><span id="runTime"></span>
+        </div>
+        <div id="cd">
+            <span>Artist:</span><span id="artist"></span><br>
+            <span>Songs:</span><ul id="songs"></ul>
+        </div>
+    </section>
+    <section id='addMedia'>
+        <label for="mediatype">Select media type:</label>
+        <select id="mediatype">
+            <option value="book">Book</option>
+            <option value="movie">Movie</option>
+            <option value="cd">CD</option>
+          </select>
+        <button id="confirmType" type="button">Confirm media type</button><br>
+        <input id="enterTitle" type="text" placeholder="Enter Title">
+        <div id="bookdata">
+            <label for="enterAuthor"></label><input id="enterAuthor" type="text" placeholder="Author"><br>
+            <label for="enterPages"></label><input id="enterPages" type="number" placeholder="# of pages">
+        </div>
+        <div id="moviedata">
+            <label for="enterDirector"></label><input id="enterDirector" type="text" placeholder="Director"><br>
+            <label for="enterRunTime"></label><input id="enterRunTime" type="number" placeholder="Run Time">
+        </div>
+        <div id="cddata">
+            <label for="enterArtist"></label><input id="enterArtist" type="text" placeholder="Artist"><br>
+            <p>Enter songs:</p>
+            <input id="enterSong1" type="text" placeholder="Song1">
+            <input id="enterSong2" type="text" placeholder="Song2">
+            <input id="enterSong3" type="text" placeholder="Song3">
+            <input id="enterSong4" type="text" placeholder="Song4">
+        </div>
+        <button id="submitData" type="submit">Submit</button>
+    </section>
+    <section id='catalog'></section>
+    <script src="script.js"></script>
+</body>
+</html>

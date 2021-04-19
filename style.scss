@@ -1,0 +1,94 @@
+input {
+    margin: 5px;
+    width: 55%;
+    height: 20px;
+    border-radius: 20px;
+    border: transparent;
+}
+button {
+    margin: 5px;
+    width: 30%;
+    height: 20px;
+    border-radius: 20px;
+    border: transparent;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.486);
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+span {
+    padding: 5px;
+}
+#menu {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        height: 30px;
+        margin: 5px;
+        width: 30%;
+        border-radius: 20px;
+        border: transparent;
+    }
+    #return {
+        position: absolute;
+        top: 100px;
+    }
+}
+#background {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(./library-1082309_1920.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+body {
+    margin: auto;
+    width: 40%;
+    height: 100vh;
+}
+header {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+#media {
+    width: 40%;
+    position: absolute;
+    top: 30vh;
+    margin: auto;
+    #rating {
+        width: 50px;
+    }
+    #rate {
+        width: 150px;
+    }
+}
+#addMedia {
+    width: 40%;
+    position: absolute;
+    top: 30vh;
+    margin: auto;
+}
+#catalog {
+    width: 40%;
+    position: absolute;
+    top: 30vh;
+    margin: auto;
+}
+table {
+    margin: auto;
+    padding: 10px;
+    td {
+        border-bottom: 1px solid black;
+        padding-right: 20px;
+    }
+}
