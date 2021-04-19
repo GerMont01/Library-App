@@ -9,114 +9,22 @@ These are the subclasses created for each media type:
 
 First I created a parent class called Media with all the properties and methods shared by the three types of media
 
-class Media {
-    constructor(title) {
-        this._title = title;
-        this._isCheckedOut =  false;
-        this._ratings = [];
-    }
-    get title(){
-        return this._title;
-    }
-    get isCheckedOut(){
-        return this._isCheckedOut;
-    }
-    get ratings(){
-        return this._ratings;
-    }
-    set isCheckedOut(val){
-        this._isCheckedOut = val;
-    }
-    toggleCheckOutStatus() {
-        this._isCheckedOut == true ? this._isCheckedOut = false : this._isCheckedOut = true;
-    }
-    getAverageRating() {
-        if (this._ratings.length == 0){return}
-        else{
-            function sum(accumulator, currentValue){return accumulator + currentValue;};
-            let total = this._ratings.reduce(sum);
-            let avg = total / this._ratings.length;
-            return avg;
-        }
-    }
-    addRating(rate) {
-        if (typeof rate === 'number' && rate >= 0 && rate < 6){
-            this._ratings.push(rate);
-        }
-        else {
-            return 'Please enter a number between 0 and 5'
-        }
-        
-    }
-    
-}
+![image](https://user-images.githubusercontent.com/77022076/115311480-91168980-a124-11eb-8494-25cd5576e3e9.png)
 
 And here we can see the code for the sub classes with an additional property "type" to display diferent input boxes or information depending on the media type. Also a new method for CDs was added to shuffle the songs randomly.
 
-class Book extends Media {
-    constructor(title, author, pages) {
-        super(title);
-        this._author = author;
-        this._pages = pages;
-        this.type = 'book';
-    }
-    get author(){
-        return this._author;
-    }
-    get pages(){
-        return this._pages;
-    }
-}
+![image](https://user-images.githubusercontent.com/77022076/115311567-b1464880-a124-11eb-9bf7-ac4d86b0988e.png)
+![image](https://user-images.githubusercontent.com/77022076/115311617-cae79000-a124-11eb-9c9c-2420aeefa7b3.png)
 
-class Movie extends Media {
-    constructor(title, director, runTime) {
-        super(title);
-        this._director = director;
-        this._runTime = runTime;
-        this.type = 'movie';
-    }
-    get director(){
-        return this._director;
-    }
-    get runTime(){
-        return this._runTime;
-    }
-}
+Finally a class Catalog was added to store the media, and to add or remove elements by calling its methods.
+![image](https://user-images.githubusercontent.com/77022076/115311652-db980600-a124-11eb-9c44-47989e588618.png)
 
-class CD extends Media {
-    constructor(title, artist, songs) {
-        super(title);
-        this._artist = artist;
-        this._songs = songs;
-        this.type = 'cd';
-    }
-    get artist(){
-        return this._artist;
-    }
-    get songs(){
-        return this._songs;
-    }
-    shuffleSongs() {
-        for (let i = this._songs.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1));
-            let temp = this.songs[i];
-            this._songs[i] = this._songs[j];
-            this._songs[j] = temp;
-        }
-    }
-}
 
-class Catalog {
-    constructor() {
-        this.catalog = [];
-    }
-    addToCatalog(media) {
-        this.catalog.push(media);
-    }
-    removeFromCatalog(media) {
-        let index = this.catalog.indexOf(media);
-        if (index > -1) {
-            this.catalog.splice(index, 1);
-        }
-    }
-}
+I did this example app to test classes and class extends. But in order to see the outcome I created a simple layout where we can choose to see the catalog, search for an specific item and add a new item.
+
+![image](https://user-images.githubusercontent.com/77022076/115312169-b657c780-a125-11eb-97c1-36d9cb4052f1.png)
+![image](https://user-images.githubusercontent.com/77022076/115312217-c8396a80-a125-11eb-8c6c-470501c1033f.png)
+![image](https://user-images.githubusercontent.com/77022076/115312269-e4d5a280-a125-11eb-9d01-1ec9d4a997da.png)
+![image](https://user-images.githubusercontent.com/77022076/115312311-f5861880-a125-11eb-8738-55efbc26472d.png)
+
+
